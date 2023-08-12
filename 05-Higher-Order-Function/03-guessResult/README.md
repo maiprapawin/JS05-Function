@@ -1,13 +1,13 @@
-ผลลัพธ์ในบรรทัดที่มี * มีค่าเป็นอะไรและเพราะอะไร
+ผลลัพธ์ในบรรทัดที่มี \* มีค่าเป็นอะไรและเพราะอะไร
 
 ```js
 function makeWorker() {
-  let name = 'Pete';
+  let name = "Pete";
   return function () {
     alert(name);
   };
 }
-let name = 'John';
+let name = "John";
 let work = makeWorker();
 work(); // *
 ```

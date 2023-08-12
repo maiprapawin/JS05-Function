@@ -1,33 +1,46 @@
-function multiply(num1, num2, callback) {
-    let result = num1 * num2;
-    callback(result);
+function makeWorker() {
+  let name = "Pete";
+  return function () {
+    alert(name); // alert Pete
+  };
 }
+let name = "John";
+let work = makeWorker();
+work(); // * >>> alert Pete เพราะถึงแม้จะตั้ง name = John แต่พอเราเรียกฟังก์ชั่น makeWorker() มาแล้ว value ของ name ก็จะเป็น Pete
 
-function displayResult(result) {
-    console.log('The result is: ' + result);
-}
+//////////////////////////////////////////////////////////////////
+// ด้านล่างนี้น่าจะไม่เกี่ยว//
 
-multiply(5, 10, displayResult);
+// function multiply(num1, num2, callback) {
+//     let result = num1 * num2;
+//     callback(result);
+// }
 
-function outerFunction() {
-    let outerVariable = 'Hello';
+// function displayResult(result) {
+//     console.log('The result is: ' + result);
+// }
 
-    function innerFunction() {
-        console.log(outerVariable + ' World!');
-    }
+// multiply(5, 10, displayResult);
 
-    return innerFunction;
-}
+// function outerFunction() {
+//     let outerVariable = 'Hello';
 
-let greeting = outerFunction();
-greeting(); // Output: "Hello World!"
+//     function innerFunction() {
+//         console.log(outerVariable + ' World!');
+//     }
 
-function adder(a) {
-    return function (b) {
-        return a + b;
-    };
-}
+//     return innerFunction;
+// }
 
-let add5 = adder(5);
-console.log(add5(3)); // Output: 8
-console.log(add5(7)); // Output: 12
+// let greeting = outerFunction();
+// greeting(); // Output: "Hello World!"
+
+// function adder(a) {
+//     return function (b) {
+//         return a + b;
+//     };
+// }
+
+// let add5 = adder(5);
+// console.log(add5(3)); // Output: 8
+// console.log(add5(7)); // Output: 12
